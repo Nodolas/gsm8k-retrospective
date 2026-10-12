@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Training History</title>
+<meta name="description" content="How the submitted GSM8K model was found, and the six phases of training runs with the platform changes on the timeline.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="index.html"><span class="mark"><i></i></span><span><b>NODOLAS // GSM8K</b><small>Overmind “Small Model, Big Maths” hack · retrospective</small></span></a>
+  <nav class="pages" aria-label="Pages">
+    <a href="index.html">Overview</a>
+    <a href="history.html" aria-current="page">History</a>
+    <a href="runs.html">Runs</a>
+    <a href="lessons.html">Lessons</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <h1>Training history</h1>
+  <p class="lede">Oct 5 20:05 to Oct 7 17:00 PDT: how I got to my submitted model, then the six phases.</p>
+  <noscript><p class="err">These pages draw their numbers from data/history.json with JavaScript. Please enable it.</p></noscript>
+
+  <section aria-labelledby="path-h">
+    <h2 id="path-h">How I got to my submitted model</h2>
+    <div class="panel" id="path"></div>
+  </section>
+
+  <section aria-labelledby="tl-h">
+    <h2 id="tl-h">The six phases</h2>
+    <p class="small muted">Squares are phases, diamonds are events. Test counts are out of 1,319.</p>
+    <div class="timeline" id="timeline"></div>
+  </section>
+</main>
+
+<footer class="site-foot"><div class="wrap">
+  <p class="disclaimer"><b>Disclaimer</b>The look of this site is a cheap, unofficial copy of the <a href="https://www.overmindlab.ai/">overmindlab.ai</a> design: the dark background, CRT scanlines and orange accent. It is not made, endorsed or reviewed by Overmind. The content is my own retrospective.</p>
+</div></footer>
+<script src="assets/app.js"></script>
+<script src="assets/history-page.js"></script>
+</body>
+</html>

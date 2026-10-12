@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GSM8K Hack Retrospective</title>
+<meta name="description" content="Retrospective of the Overmind Small Model, Big Maths (GSM8K) hack: final score 87.2278, what helped, what hurt and every training run.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="index.html"><span class="mark"><i></i></span><span><b>NODOLAS // GSM8K</b><small>Overmind “Small Model, Big Maths” hack · retrospective</small></span></a>
+  <nav class="pages" aria-label="Pages">
+    <a href="index.html" aria-current="page">Overview</a>
+    <a href="history.html">History</a>
+    <a href="runs.html">Runs</a>
+    <a href="lessons.html">Lessons</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <p class="event-note"><span class="tag warn">Hackathon</span>
+    This was my entry to Overmind’s “Small Model, Big Maths” model training hackathon in San Francisco on 8 October 2026.
+    <a href="https://www.overmindlab.ai/hack">Hackathon page</a>
+    <span class="muted">(if that link no longer works: <a href="https://www.overmindlab.ai/">overmindlab.ai</a>)</span></p>
+  <h1>Final result</h1>
+  <p class="lede">Submissions closed on 2026-10-07 at 17:00 PDT. My model is a light LoRA on Qwen3.5-4B, trained on day 2. Over the last day and a half no later run beat it.</p>
+  <div class="hero" id="hero"></div>
+  <p class="formula" id="formula"></p>
+  <div class="btn-row">
+    <button class="btn" id="story-open" type="button">▶ Story in 30 seconds</button>
+    <a class="btn ghost" href="history.html">How I got to the model</a>
+  </div>
+  <noscript><p class="err">These pages draw their numbers from data/history.json with JavaScript. Please enable it.</p></noscript>
+
+  <section aria-labelledby="board-h">
+    <h2 id="board-h">Final leaderboard</h2>
+    <p class="small muted">overmindlab.ai high scores, captured 17:37 PDT on Oct 7, after the deadline.</p>
+    <div id="board"></div>
+    <p class="small muted" id="board-note" style="margin-top:10px"></p>
+  </section>
+
+  <section aria-labelledby="charts-h">
+    <h2 id="charts-h">Two charts that tell it</h2>
+    <div class="grid two chart-grid">
+      <div class="panel chart-card">
+        <h3>No later model beat my submission</h3>
+        <p class="sub" id="tests-sub"></p>
+        <p class="howto" id="tests-how"></p>
+        <div class="chart" id="chart-tests"></div>
+      </div>
+      <div class="panel chart-card">
+        <h3>Shorthand answers scored worse</h3>
+        <p class="sub" id="calc-sub"></p>
+        <p class="howto" id="calc-how"></p>
+        <div class="chart" id="chart-calc"></div>
+      </div>
+    </div>
+    <p class="small muted" style="margin-top:12px">Hover or tap a dot to see the run; click it to open the run card.</p>
+  </section>
+
+  <section aria-labelledby="sub-h">
+    <h2 id="sub-h">The submitted model</h2>
+    <p class="small muted">The model behind my score, tested once.</p>
+    <div class="panel" id="submission"></div>
+  </section>
+
+  <section aria-labelledby="more-h">
+    <h2 id="more-h">More pages</h2>
+    <div class="grid three cards">
+      <a class="card" href="history.html"><h3>Training history</h3><p>The six phases, from picking the base model to the last-day re-rolls, with the platform changes on the timeline.</p></a>
+      <a class="card" href="runs.html"><h3>All 52 runs</h3><p>Sortable, filterable table of every run with its recipe, validation and test results. Click a row for the full card.</p></a>
+      <a class="card" href="lessons.html"><h3>Mistakes &amp; lessons</h3><p>The main mistakes and what to do next time.</p></a>
+    </div>
+  </section>
+</main>
+
+<dialog id="story" aria-labelledby="story-h">
+  <div class="dlg-head"><h2 id="story-h">Story in 30 seconds</h2><button class="close" type="button">Close ✕</button></div>
+  <div class="dlg-body" id="story-body"></div>
+</dialog>
+
+<footer class="site-foot"><div class="wrap">
+  <p class="disclaimer"><b>Disclaimer</b>The look of this site is a cheap, unofficial copy of the <a href="https://www.overmindlab.ai/">overmindlab.ai</a> design: the dark background, CRT scanlines and orange accent. It is not made, endorsed or reviewed by Overmind. The content is my own retrospective.</p>
+</div></footer>
+<script src="assets/app.js"></script>
+<script src="assets/overview.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>All Training Runs</title>
+<meta name="description" content="Sortable and filterable table of all 52 GSM8K training runs with recipe, validation and official test results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="index.html"><span class="mark"><i></i></span><span><b>NODOLAS // GSM8K</b><small>Overmind “Small Model, Big Maths” hack · retrospective</small></span></a>
+  <nav class="pages" aria-label="Pages">
+    <a href="index.html">Overview</a>
+    <a href="history.html">History</a>
+    <a href="runs.html" aria-current="page">Runs</a>
+    <a href="lessons.html">Lessons</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <h1>All training runs</h1>
+  <p class="lede">Every run of the hack: recipe, validation and official test. Val = correct out of 200 or 500 held-out train rows, with the gap to the untouched base on the same items in brackets (40-item rows are style peeks). Test = correct out of 1,319. <code>&lt;&lt;calc&gt;&gt;</code> and Chars describe the answers: test where tested, else validation (marked v).</p>
+  <noscript><p class="err">These pages draw their numbers from data/history.json with JavaScript. Please enable it.</p></noscript>
+
+  <div class="filters" role="search">
+    <label>Search<input id="f-q" type="search" placeholder="id, method, data, lesson…" autocomplete="off"></label>
+    <label>Phase<select id="f-phase"><option value="">All phases</option></select></label>
+    <label>Base model<select id="f-base"><option value="">All bases</option></select></label>
+    <label>Results<select id="f-res"><option value="">Any</option><option value="test">Has an official test</option><option value="val">Has validation</option><option value="none">No result</option></select></label>
+    <button class="btn ghost" id="f-reset" type="button">Reset</button>
+  </div>
+  <p class="count" id="count" aria-live="polite"></p>
+  <div class="table-wrap">
+    <table id="runs">
+      <thead><tr></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</main>
+
+<dialog id="detail" aria-labelledby="detail-h">
+  <div class="dlg-head"><h2 id="detail-h">Run</h2><button class="close" type="button">Close ✕</button></div>
+  <div class="dlg-body" id="detail-body"></div>
+</dialog>
+
+<footer class="site-foot"><div class="wrap">
+  <p class="disclaimer"><b>Disclaimer</b>The look of this site is a cheap, unofficial copy of the <a href="https://www.overmindlab.ai/">overmindlab.ai</a> design: the dark background, CRT scanlines and orange accent. It is not made, endorsed or reviewed by Overmind. The content is my own retrospective.</p>
+</div></footer>
+<script src="assets/app.js"></script>
+<script src="assets/runs-page.js"></script>
+</body>
+</html>
