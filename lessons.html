@@ -9,6 +9,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Press+Start+2P&display=swap">
 <link rel="stylesheet" href="assets/style.css">
+<!-- llm:head -->
+<link rel="alternate" type="text/markdown" href="retrospective.md" title="Full retrospective as Markdown">
+<link rel="canonical" href="https://nodolas.github.io/gsm8k-retrospective/lessons.html">
+<!-- /llm:head -->
 </head>
 <body>
 <header class="site"><div class="wrap">
@@ -24,7 +28,7 @@
 <main class="wrap">
   <h1>Mistakes and lessons</h1>
   <p class="lede">What went wrong and what I would do differently.</p>
-  <noscript><p class="err">These pages draw their numbers from data/history.json with JavaScript. Please enable it.</p></noscript>
+  <noscript><p class="err">These pages draw their charts with JavaScript. The plain-text version at the bottom and <a href="retrospective.md">retrospective.md</a> work without it.</p></noscript>
 
   <section aria-labelledby="m-h">
     <h2 id="m-h">Mistakes</h2>
@@ -36,6 +40,11 @@
     <div class="panel" id="next"></div>
   </section>
 
+<!-- llm:text -->
+<details class="plain-text panel"><summary>Lessons as plain text (for screen readers, LLMs and agents)</summary>
+<p>My entry to Overmind&#x27;s &quot;Small Model, Big Maths&quot; two-day model training hackathon in San Francisco (submissions closed 2026-10-07 17:00 PDT): a light LoRA fine-tune of Qwen3.5-4B that scored 87.2278 on GSM8K (1,212/1,319 correct, 91.89%, minus 4.66 B parameters), rank 6 on the final leaderboard.</p><h3>Mistakes</h3><ol><li><b>One draw of the winning recipe.</b> The light LoRA was trained once before Overmind changed its trainer; afterwards the same settings scored 1,112/1,319 instead of 1,212, so the result could never be repeated.</li><li><b>Clearing jobs to free slots.</b> The 2-job limit pushed me to clear out jobs, and the best validation run (r6) went before it was ever tested.</li><li><b>A night of automation, no answers.</b> The overnight controller ran 18 small probes, none clearly above the base, and produced no test evidence.</li><li><b>Many tests, no gain.</b> 16 official tests after the submission; none beat 1,212 (best 1,208).</li></ol><h3>What to do next time</h3><ol><li>Re-draw a winner at once, several times, while the platform is unchanged.</li><li>Never drop an untested promising model; archive adapters first.</li><li>Re-run a known reference after any platform change before spending more runs.</li><li>Gate on cheap signals: the share of &lt;&lt;calc&gt;&gt; answers flagged every collapse (submission 0.26, collapsed models 0.87+).</li><li>Choose on validation, test once, and settle the parameter count on day 1.</li></ol>
+<p>All of it in one file: <a href="retrospective.md">retrospective.md</a> · <a href="llms.txt">llms.txt</a> · <a href="data/history.json">data/history.json</a></p></details>
+<!-- /llm:text -->
 </main>
 
 <footer class="site-foot"><div class="wrap">

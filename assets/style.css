@@ -259,3 +259,10 @@ footer.site-foot a { color: var(--text-2); }
 .event-note { margin: 0 0 22px; line-height: 1.7; padding: 12px 14px; background: var(--panel); border: 3px solid var(--border); box-shadow: var(--shadow); font-size: 15px; color: var(--text-2); }
 .event-note .tag { margin-right: 8px; vertical-align: 2px; }
 footer.site-foot .back-home { margin: 0 0 10px; }
+
+/* Plain-text copy of each page (scripts/build_llm.py), for screen readers, LLMs and agents. */
+details.plain-text { margin: 28px 0 8px; font-size: 14px; }
+details.plain-text summary { cursor: pointer; color: var(--muted); font: 9px/1.6 var(--pixel); text-transform: uppercase; }
+details.plain-text h3 { margin: 16px 0 6px; }
+details.plain-text ul, details.plain-text ol { padding-left: 20px; }
+details.plain-text .table-wrap { margin-top: 10px; max-height: 420px; overflow: auto; }

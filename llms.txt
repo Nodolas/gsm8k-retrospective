@@ -1,0 +1,22 @@
+# GSM8K hackathon retrospective (Nicolas Peters Saa)
+
+> My entry to Overmind's "Small Model, Big Maths" two-day model training hackathon in San Francisco (submissions closed 2026-10-07 17:00 PDT): a light LoRA fine-tune of Qwen3.5-4B that scored 87.2278 on GSM8K (1,212/1,319 correct, 91.89%, minus 4.66 B parameters), rank 6 on the final leaderboard.
+
+Everything on this site is also available as one Markdown file; prefer it over the HTML pages, which draw their numbers with JavaScript.
+
+## Docs
+
+- [Full retrospective (Markdown)](https://nodolas.github.io/gsm8k-retrospective/retrospective.md): key facts, leaderboard, what helped and hurt, phases, mistakes, all 52 runs
+- [Run data (JSON)](https://nodolas.github.io/gsm8k-retrospective/data/history.json): every run with recipe, validation and test results
+
+## Pages
+
+- [Overview](https://nodolas.github.io/gsm8k-retrospective/index.html): final score, leaderboard, headline charts, the submitted model
+- [History](https://nodolas.github.io/gsm8k-retrospective/history.html): how I got to the model and the six phases
+- [Runs](https://nodolas.github.io/gsm8k-retrospective/runs.html): sortable table of all runs
+- [Lessons](https://nodolas.github.io/gsm8k-retrospective/lessons.html): mistakes and what to do next time
+
+## Optional
+
+- [Hackathon page](https://www.overmindlab.ai/hack)
+- [Author's site](https://nodolas.github.io/NicolasPetersSaa/)

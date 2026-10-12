@@ -9,6 +9,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Press+Start+2P&display=swap">
 <link rel="stylesheet" href="assets/style.css">
+<!-- llm:head -->
+<link rel="alternate" type="text/markdown" href="retrospective.md" title="Full retrospective as Markdown">
+<link rel="canonical" href="https://nodolas.github.io/gsm8k-retrospective/history.html">
+<!-- /llm:head -->
 </head>
 <body>
 <header class="site"><div class="wrap">
@@ -24,7 +28,7 @@
 <main class="wrap">
   <h1>Training history</h1>
   <p class="lede">Oct 5 20:05 to Oct 7 17:00 PDT: how I got to my submitted model, then the six phases.</p>
-  <noscript><p class="err">These pages draw their numbers from data/history.json with JavaScript. Please enable it.</p></noscript>
+  <noscript><p class="err">These pages draw their charts with JavaScript. The plain-text version at the bottom and <a href="retrospective.md">retrospective.md</a> work without it.</p></noscript>
 
   <section aria-labelledby="path-h">
     <h2 id="path-h">How I got to my submitted model</h2>
@@ -36,6 +40,11 @@
     <p class="small muted">Squares are phases, diamonds are events. Test counts are out of 1,319.</p>
     <div class="timeline" id="timeline"></div>
   </section>
+<!-- llm:text -->
+<details class="plain-text panel"><summary>History as plain text (for screen readers, LLMs and agents)</summary>
+<p>My entry to Overmind&#x27;s &quot;Small Model, Big Maths&quot; two-day model training hackathon in San Francisco (submissions closed 2026-10-07 17:00 PDT): a light LoRA fine-tune of Qwen3.5-4B that scored 87.2278 on GSM8K (1,212/1,319 correct, 91.89%, minus 4.66 B parameters), rank 6 on the final leaderboard.</p><h3>P1: Pick the base model (Oct 5 evening)</h3><p>2B, 4B and 9B Qwen3.5 with standard LoRA SFT. The 4B won; heavy SFT made every model worse than the untouched 4B. Trainer: old (packed rows kept separate).</p><h3>P2: Light touch wins (Oct 6 morning)</h3><p>LR 1e-5, one epoch, 48 packed steps: +1 pt on validation, then 1,212/1,319 on test = the submission (87.2278). Trainer: old.</p><h3>P3: Re-rolls after the trainer change (Oct 6 afternoon-evening)</h3><p>The same recipe re-run collapsed into short `&lt;&lt;calc&gt;&gt;` answers: 1,074-1,170 on test. Trainer: packed rows attend to each other (Overmind commit 1be6037, 10:12 PDT).</p><h3>P4: Overnight probes (Oct 6 22:00 - Oct 7 09:00)</h3><p>18 automated runs on 960-row subsets (batch, LR, attention-only, Full-FT, 2 epochs; a 19th never finished): none more than 2 items above the base on 200 val items. Trainer: new; 960-row subsets train unpacked.</p><h3>P5: Other bases and full fine-tuning (Oct 7 09:30 - 13:00)</h3><p>Qwen3-4B (127/200), packed light LoRA = base on test (1,198 / 1,197), unpacked LoRA and Full-FT below base. Trainer: packed until ~11:30, then everything unpacked (PR #167).</p><h3>P6: Around the submitted recipe (Oct 7 13:00 - 17:00)</h3><p>Exact copy 1,058; 48 steps at LR 1e-5 collapsed; 48 steps at LR 5e-6 batch 16 was the best since the change: 1,198-1,208. Trainer: new, unpacked.</p>
+<p>All of it in one file: <a href="retrospective.md">retrospective.md</a> · <a href="llms.txt">llms.txt</a> · <a href="data/history.json">data/history.json</a></p></details>
+<!-- /llm:text -->
 </main>
 
 <footer class="site-foot"><div class="wrap">
