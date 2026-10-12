@@ -258,3 +258,4 @@ footer.site-foot a { color: var(--text-2); }
 /* Hackathon note at the top of the landing page */
 .event-note { margin: 0 0 22px; line-height: 1.7; padding: 12px 14px; background: var(--panel); border: 3px solid var(--border); box-shadow: var(--shadow); font-size: 15px; color: var(--text-2); }
 .event-note .tag { margin-right: 8px; vertical-align: 2px; }
+footer.site-foot .back-home { margin: 0 0 10px; }
